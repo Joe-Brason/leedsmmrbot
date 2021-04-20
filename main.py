@@ -1,4 +1,4 @@
-# Smile
+# Smile :)
 
 from rltrackerScraper import getMMR
 import discord
