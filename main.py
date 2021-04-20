@@ -1,4 +1,4 @@
-# ODI1MjAwMjIwMDY5MDM2MDUy.YF6dlw.H9Jygp5OgYouGxa_jhg0iSXpKIw
+# Smile
 
 from rltrackerScraper import getMMR
 import discord
