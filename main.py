@@ -1,4 +1,4 @@
-# Smile :)
+# Brason making a bot!
 
 from rltrackerScraper import getMMR
 import discord
