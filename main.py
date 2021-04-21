@@ -1,8 +1,25 @@
 # Brason making a bot!
 
+# imports
 from rltrackerScraper import getMMR
 import discord
 import os, sys
+
+try:
+    import boto
+
+    from boto.s3.connection import S3Connection
+    s3 = S3Connection(os.environ['token'])
+    print(s3)
+except ModuleNotFoundError:
+    print("Boto doesn't exist!")
+
+    # Get environment variables
+    token = os.getenv('BotToken')
+    # print(token)
+
+
+
 
 
 
@@ -85,6 +102,6 @@ async def change_status():
     await client.change_presence(activity=discord.Game(f"Uptime: {counter} minutes"))
     counter += 1
 
-client.run("ODI1MjAwMjIwMDY5MDM2MDUy.YF6dlw.H9Jygp5OgYouGxa_jhg0iSXpKIw")
+client.run(token)
 
 print("end")
