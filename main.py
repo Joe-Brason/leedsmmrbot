@@ -7,14 +7,14 @@ import os, sys
 
 try:
     token = os.getenv("token")
-    print(token)
-    import boto
-
-    from boto.s3.connection import S3Connection
-    s3 = S3Connection(os.environ['token'])
-    usingHeroku = True
-    print("HEOIUAHOEIRHRO{Er")
-    print(s3)
+    print("The token is", token)
+    # import boto
+    #
+    # from boto.s3.connection import S3Connection
+    # s3 = S3Connection(os.environ['token'])
+    # usingHeroku = True
+    # print("HEOIUAHOEIRHRO{Er")
+    # print(s3)
 except ModuleNotFoundError:
     print("Boto doesn't exist!")
     usingHeroku = False
