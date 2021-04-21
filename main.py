@@ -13,24 +13,6 @@ elif usingHeroku == None:
     usingHeroku = False
 print("usingHeroku var:", usingHeroku, type(usingHeroku))
 
-# try:
-#     token = os.getenv("token")
-#     print("The token is", token)
-#     # import boto
-#     #
-#     # from boto.s3.connection import S3Connection
-#     # s3 = S3Connection(os.environ['token'])
-#
-#     # print("HEOIUAHOEIRHRO{Er")
-#     # print(s3)
-# except ModuleNotFoundError:
-#     print("Boto doesn't exist!")
-#     usingHeroku = False
-#
-#     # Get environment variables
-#     token = os.getenv('BotToken')
-#     # print(token)
-
 
 from discord.ext import commands, tasks
 
@@ -47,6 +29,12 @@ def isBotPerson():
     def predicate(ctx):
         return ctx.message.author.id in [195587810131050496]
     return commands.check(predicate)
+
+@client.command()
+async def test(ctx):
+    print("This is a test")
+    await ctx.send("This is a test")
+    print("The test worked I think?")
 
 @client.command()
 @isBotPerson()
