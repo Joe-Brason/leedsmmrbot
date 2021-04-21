@@ -5,27 +5,29 @@ from rltrackerScraper import getMMR
 import discord
 import os, sys
 
-try:
-    token = os.getenv("token")
-    print("The token is", token)
-    # import boto
-    #
-    # from boto.s3.connection import S3Connection
-    # s3 = S3Connection(os.environ['token'])
-    # usingHeroku = True
-    # print("HEOIUAHOEIRHRO{Er")
-    # print(s3)
-except ModuleNotFoundError:
-    print("Boto doesn't exist!")
+token = os.getenv("discordBotToken")
+usingHeroku = os.getenv("usingHeroku")
+if usingHeroku == None:
     usingHeroku = False
 
-    # Get environment variables
-    token = os.getenv('BotToken')
-    # print(token)
 
-
-
-
+# try:
+#     token = os.getenv("token")
+#     print("The token is", token)
+#     # import boto
+#     #
+#     # from boto.s3.connection import S3Connection
+#     # s3 = S3Connection(os.environ['token'])
+#
+#     # print("HEOIUAHOEIRHRO{Er")
+#     # print(s3)
+# except ModuleNotFoundError:
+#     print("Boto doesn't exist!")
+#     usingHeroku = False
+#
+#     # Get environment variables
+#     token = os.getenv('BotToken')
+#     # print(token)
 
 
 from discord.ext import commands, tasks
