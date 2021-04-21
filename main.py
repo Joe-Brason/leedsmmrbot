@@ -7,9 +7,11 @@ import os, sys
 
 token = os.getenv("discordBotToken")
 usingHeroku = os.getenv("usingHeroku")
-if usingHeroku == None:
+if usingHeroku == "True":
+    usingHeroku = True
+elif usingHeroku == None:
     usingHeroku = False
-
+print("usingHeroku var:", usingHeroku)
 
 # try:
 #     token = os.getenv("token")
