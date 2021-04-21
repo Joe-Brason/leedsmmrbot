@@ -6,6 +6,8 @@ import discord
 import os, sys
 
 try:
+    token = os.getenv("token")
+    print(token)
     import boto
 
     from boto.s3.connection import S3Connection
