@@ -16,7 +16,7 @@ class Utilities(commands.Cog):
     # Commands
 
     @commands.command(aliases=["Ping", "PING"])
-    async def ping(ctx):
+    async def ping(self, ctx):
         await ctx.send(f"Pong! {round(self.client.latency, 4)}ms")
 
     # clear command in a guild
