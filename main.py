@@ -11,7 +11,7 @@ if usingHeroku == "True":
     usingHeroku = True
 elif usingHeroku == None:
     usingHeroku = False
-print("usingHeroku var:", usingHerokum, type(usingHeroku))
+print("usingHeroku var:", usingHeroku, type(usingHeroku))
 
 # try:
 #     token = os.getenv("token")
