@@ -11,7 +11,7 @@ if usingHeroku == "True":
     usingHeroku = True
 elif usingHeroku == None:
     usingHeroku = False
-print("usingHeroku var:", usingHeroku)
+print("usingHeroku var:", usingHerokum, type(usingHeroku))
 
 # try:
 #     token = os.getenv("token")
@@ -35,8 +35,6 @@ print("usingHeroku var:", usingHeroku)
 from discord.ext import commands, tasks
 
 prefix = "!"
-
-usingHeroku = False
 
 if not usingHeroku:
     os.chdir(r'C:\Users\jbabr\PycharmProjects\pnsBot3')
