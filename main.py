@@ -13,24 +13,23 @@ elif usingHeroku == None:
     usingHeroku = False
 print("usingHeroku var:", usingHeroku, type(usingHeroku))
 
-
 from discord.ext import commands, tasks
 
 prefix = "!"
 
 if not usingHeroku:
-    os.chdir(r'C:\Users\jbabr\PycharmProjects\pnsBot3')
+    os.chdir(r'C:\Users\jbabr\PycharmProjects\leedsmmrbot')
 
-client = commands.Bot(command_prefix= prefix)
+client = commands.Bot(command_prefix=prefix)
 counter = 0
 
-
+# Check to limit command usage to specified discord users (by id)
 def isBotPerson():
     def predicate(ctx):
         return ctx.message.author.id in [195587810131050496]
     return commands.check(predicate)
 
-@client.command()
+@client.command(aliases=["Test", "t"])
 async def test(ctx):
     print("This is a test")
     await ctx.send("This is a test")
@@ -84,12 +83,14 @@ for filename in os.listdir(cogsDir):
         client.load_extension(f"cogs.{filename[:-3]}")
 
 
-#EXAMPLE LOOPED TASK
+#Looped Task
 @client.event
 async def on_ready():
     gamePlaying = "Greenbean Smells"
     await client.change_presence(status=discord.Status.online, activity=discord.Game(gamePlaying))
     change_status.start()  # Remove if wanting to change game status
+
+
 
 @tasks.loop(minutes=1)
 async def change_status():

@@ -7,6 +7,28 @@ class Utilities(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    async def embedMessage(self, ctx):
+        # await ctx.send("Test")
+
+        emb = discord.Embed(
+            title='Player Information Database Search Result',
+            description="This embed shows all players matching the university search",
+            colour=discord.Colour.blue()
+        )
+
+        imgUrl = "https://images.discordapp.net/avatars/406173174330425354/e373d916adc3b5422dae9d231dfd1558.png?size=512"
+
+        emb.set_footer(text="MMRbot created by Joseph Brason")
+        emb.set_image(url=imgUrl)
+        emb.set_thumbnail(url=imgUrl)
+        emb.set_author(name="Joseph Brason", icon_url=imgUrl)
+        emb.add_field(name="Field Name", value="Field Value", inline=True)
+        emb.add_field(name="Field Name", value="Field Value", inline=True)
+        emb.add_field(name="Field Name", value="Field Value", inline=True)
+        emb.add_field(name="Field Name", value="Field Value", inline=False)
+
+        await ctx.send(embed=emb)
+
     # Events
     @commands.Cog.listener()
     async def on_ready(self):
@@ -18,6 +40,7 @@ class Utilities(commands.Cog):
     @commands.command(aliases=["Ping", "PING"])
     async def ping(self, ctx):
         await ctx.send(f"Pong! {round(self.client.latency, 4)}ms")
+        await self.embedMessage(ctx)
 
     # clear command in a guild
     @commands.command(aliases=["c"])
